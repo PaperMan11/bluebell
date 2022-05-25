@@ -14,37 +14,45 @@ import (
 	"syscall"
 	"time"
 
+	"bluebell/pkg/snowflake"
+
 	"go.uber.org/zap"
 )
 
 // Go Web 开发较通用脚手架
 
 func main() {
-	// 1、加载配置
+	// 加载配置
 	if err := settings.Init(); err != nil {
 		fmt.Println("settings init failed:", err)
 		return
 	}
-	// 2、初始化日志
+	// 初始化日志
 	if err := logger.Init(settings.Conf.LogConfig); err != nil {
 		fmt.Println("logger init failed:", err)
 		return
 	}
-	// 3、初始化 MySQL
+	// 初始化 MySQL
 	if err := mysql.Init(settings.Conf.MySQLConfig); err != nil {
 		fmt.Println("mysql init failed:", err)
 		return
 	}
 	defer mysql.Close() // 关闭连接
-	// 4、初始化 Redis
+	// 初始化 Redis
 	if err := redis.Init(settings.Conf.RedisConfig); err != nil {
 		fmt.Println("redis init failed:", err)
 		return
 	}
 	defer redis.Close() // 关闭连接
-	// 5、注册路由
+
+	if err := snowflake.Init(settings.Conf.StartTime, settings.Conf.MachineID); err != nil {
+		fmt.Println("snowflake init failed:", err)
+		return
+	}
+
+	// 注册路由
 	r := routes.Setup()
-	// 6、启动服务（优雅关机）
+	// 启动服务（优雅关机）
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%d", settings.Conf.Port),
 		Handler: r,

@@ -1,2 +1,4 @@
 {"level":"INFO","time":"2022-05-25T10:35:43.577+0800","caller":"bluebell/main.go:68","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2022-05-25T10:35:43.580+0800","caller":"bluebell/main.go:76","msg":"Server exiting"}
+{"level":"INFO","time":"2022-05-25T11:27:22.599+0800","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-25T11:27:22.606+0800","caller":"bluebell/main.go:84","msg":"Server exiting"}
