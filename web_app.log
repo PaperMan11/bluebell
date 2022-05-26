@@ -2,3 +2,8 @@
 {"level":"INFO","time":"2022-05-25T10:35:43.580+0800","caller":"bluebell/main.go:76","msg":"Server exiting"}
 {"level":"INFO","time":"2022-05-25T11:27:22.599+0800","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2022-05-25T11:27:22.606+0800","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"INFO","time":"2022-05-26T01:53:16.685-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000193302}
+{"level":"ERROR","time":"2022-05-26T01:53:25.413-0700","caller":"controller/user.go:27","msg":"SignUp with invalid param"}
+{"level":"INFO","time":"2022-05-26T01:53:25.413-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000119281}
+{"level":"INFO","time":"2022-05-26T02:04:27.798-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-26T02:04:27.801-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
