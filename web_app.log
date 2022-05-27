@@ -7,3 +7,27 @@
 {"level":"INFO","time":"2022-05-26T01:53:25.413-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000119281}
 {"level":"INFO","time":"2022-05-26T02:04:27.798-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2022-05-26T02:04:27.801-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"ERROR","time":"2022-05-26T19:13:48.031-0700","caller":"controller/user.go:19","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassWord' Error:Field validation for 'RePassWord' failed on the 'required' tag"}
+{"level":"INFO","time":"2022-05-26T19:13:48.035-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.009549523}
+{"level":"INFO","time":"2022-05-26T19:14:01.886-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000193392}
+{"level":"INFO","time":"2022-05-26T19:14:38.901-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-26T19:14:38.904-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"ERROR","time":"2022-05-26T19:27:59.905-0700","caller":"controller/user.go:19","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassWord' Error:Field validation for 'RePassWord' failed on the 'required' tag"}
+{"level":"INFO","time":"2022-05-26T19:27:59.906-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000902848}
+{"level":"INFO","time":"2022-05-26T19:28:11.473-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000097943}
+{"level":"INFO","time":"2022-05-26T19:28:25.413-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-26T19:28:25.414-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"INFO","time":"2022-05-26T19:55:06.498-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.079309786}
+{"level":"INFO","time":"2022-05-26T20:03:44.073-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.006093464}
+{"level":"INFO","time":"2022-05-26T20:03:51.734-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.001342296}
+{"level":"ERROR","time":"2022-05-26T20:03:55.723-0700","caller":"controller/user.go:19","msg":"SignUp with invalid param","error":"Key: 'ParamSignUp.RePassWord' Error:Field validation for 'RePassWord' failed on the 'eqfield' tag"}
+{"level":"INFO","time":"2022-05-26T20:03:55.724-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000790038}
+{"level":"INFO","time":"2022-05-26T20:05:04.243-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-26T20:05:04.246-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"INFO","time":"2022-05-26T20:05:20.279-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.021919892}
+{"level":"INFO","time":"2022-05-26T20:05:22.708-0700","caller":"logger/logger.go:71","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.004749354}
+{"level":"INFO","time":"2022-05-26T20:05:55.870-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-26T20:05:55.872-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"INFO","time":"2022-05-26T20:34:40.107-0700","caller":"logger/logger.go:83","msg":"/signup","status":200,"method":"POST","path":"/signup","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.013611389}
+{"level":"INFO","time":"2022-05-26T20:34:47.385-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-26T20:34:47.387-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}

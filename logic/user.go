@@ -2,16 +2,27 @@ package logic
 
 import (
 	"bluebell/dao/mysql"
+	"bluebell/models"
 	"bluebell/pkg/snowflake"
 )
 
 // 业务逻辑处理
 
-func SignUp() {
+func SignUp(p *models.ParamSignUp) (err error) {
 	// 判断用户是否存在
-	mysql.QueryUserByName()
+	if err = mysql.CheckUserExist(p.UserName); err != nil {
+		// 数据库查询出错
+		return err
+	}
+
 	// 生成uid
-	snowflake.GetID()
+	userID := snowflake.GetID()
+	// 构造一个 Uesr 实例
+	user := &models.User{
+		UserID:   userID,
+		Username: p.UserName,
+		Password: p.PassWord,
+	}
 	// 保存进数据库
-	mysql.InsertUser()
+	return mysql.InsertUser(user)
 }
