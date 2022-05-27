@@ -16,6 +16,7 @@ func Setup(mode string) *gin.Engine {
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 	// 注册业务路由
 	r.POST("/signup", controller.SignUpHandler)
+	r.POST("/login", controller.LoginHandler)
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.String(200, settings.Conf.Version)
 	})
