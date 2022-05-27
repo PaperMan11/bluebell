@@ -49,15 +49,16 @@ func LoginHandler(ctx *gin.Context) {
 		return
 	}
 	// 业务逻辑处理
-	if err := logic.Login(p); err != nil {
+	token, err := logic.Login(p)
+	if err != nil {
 		zap.L().Error("logic.Login failed", zap.Error(err))
 		if errors.Is(err, mysql.ErrorUserNotExist) {
 			ResponseError(ctx, CodeUserNotExist)
 			return
 		}
-		ResponseError(ctx, CodeServerBusy)
+		ResponseError(ctx, CodeInvalidPassword)
 		return
 	}
 	// 返回响应
-	ResponseSuccess(ctx, nil)
+	ResponseSuccess(ctx, token)
 }

@@ -3,7 +3,9 @@ package routes
 import (
 	"bluebell/controller"
 	"bluebell/logger"
+	"bluebell/middlewares"
 	"bluebell/settings"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -17,8 +19,13 @@ func Setup(mode string) *gin.Engine {
 	// 注册业务路由
 	r.POST("/signup", controller.SignUpHandler)
 	r.POST("/login", controller.LoginHandler)
-	r.GET("/", func(ctx *gin.Context) {
-		ctx.String(200, settings.Conf.Version)
+	r.GET("/ping", middlewares.JWTAuthMiddleware(), func(ctx *gin.Context) {
+		ctx.String(http.StatusOK, settings.Conf.Version)
+	})
+	r.NoRoute(func(ctx *gin.Context) {
+		ctx.JSON(http.StatusOK, gin.H{
+			"msg": "404",
+		})
 	})
 	return r
 }
