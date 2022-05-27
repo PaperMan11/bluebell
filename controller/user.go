@@ -1,9 +1,10 @@
 package controller
 
 import (
+	"errors"
 	"fmt"
-	"net/http"
 
+	"bluebell/dao/mysql"
 	"bluebell/logic"
 	"bluebell/models"
 
@@ -17,25 +18,24 @@ func SignUpHandler(ctx *gin.Context) {
 	p := new(models.ParamSignUp)
 	if err := ctx.ShouldBindJSON(p); err != nil {
 		zap.L().Error("SignUp with invalid param", zap.Error(err))
-		ctx.JSON(http.StatusOK, gin.H{
-			"msg": err.Error(),
-		})
+		ResponseError(ctx, CodeInvalidParam)
 		return
 	}
 	fmt.Println(*p)
 
 	// 业务处理
 	if err := logic.SignUp(p); err != nil {
-		ctx.JSON(http.StatusOK, gin.H{
-			"msg": "注册失败",
-		})
+		zap.L().Error("SignUp failed", zap.Error(err))
+		if errors.Is(err, mysql.ErrorUserExist) {
+			ResponseError(ctx, CodeUserExist)
+			return
+		}
+		ResponseError(ctx, CodeServerBusy)
 		return
 	}
 
 	// 返回响应
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "注册成功",
-	})
+	ResponseSuccess(ctx, nil)
 }
 
 // 用户登录
@@ -45,21 +45,19 @@ func LoginHandler(ctx *gin.Context) {
 	p := new(models.ParamLogin)
 	if err := ctx.ShouldBindJSON(p); err != nil {
 		zap.L().Error("Login with invalid param", zap.Error(err))
-		ctx.JSON(http.StatusOK, gin.H{
-			"msg": err.Error(),
-		})
+		ResponseError(ctx, CodeInvalidParam)
 		return
 	}
 	// 业务逻辑处理
 	if err := logic.Login(p); err != nil {
 		zap.L().Error("logic.Login failed", zap.Error(err))
-		ctx.JSON(http.StatusOK, gin.H{
-			"msg": "用户或密码错误",
-		})
+		if errors.Is(err, mysql.ErrorUserNotExist) {
+			ResponseError(ctx, CodeUserNotExist)
+			return
+		}
+		ResponseError(ctx, CodeServerBusy)
 		return
 	}
 	// 返回响应
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "登录成功",
-	})
+	ResponseSuccess(ctx, nil)
 }
