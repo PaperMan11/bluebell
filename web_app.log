@@ -76,3 +76,16 @@
 {"level":"INFO","time":"2022-05-28T00:09:14.560-0700","caller":"logger/logger.go:83","msg":"/api/v1/community/4","status":200,"method":"GET","path":"/api/v1/community/4","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.00127852}
 {"level":"INFO","time":"2022-05-28T00:09:23.740-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2022-05-28T00:09:23.745-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"INFO","time":"2022-05-28T01:02:17.527-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-28T01:02:17.536-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"ERROR","time":"2022-05-28T01:07:01.304-0700","caller":"controller/post.go:15","msg":"create post with invalid param"}
+{"level":"INFO","time":"2022-05-28T01:07:01.306-0700","caller":"logger/logger.go:83","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.002639217}
+{"level":"ERROR","time":"2022-05-28T01:07:38.689-0700","caller":"controller/post.go:15","msg":"create post with invalid param"}
+{"level":"INFO","time":"2022-05-28T01:07:38.689-0700","caller":"logger/logger.go:83","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.000186148}
+{"level":"ERROR","time":"2022-05-28T01:08:14.545-0700","caller":"controller/post.go:28","msg":"logic.CreatePost failed","error":"Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'valuses(?,?,?,?,?)' at line 3"}
+{"level":"INFO","time":"2022-05-28T01:08:14.545-0700","caller":"logger/logger.go:83","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.005854034}
+{"level":"INFO","time":"2022-05-28T01:10:33.885-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-28T01:10:33.893-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"INFO","time":"2022-05-28T01:10:41.119-0700","caller":"logger/logger.go:83","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.013425351}
+{"level":"INFO","time":"2022-05-28T01:11:26.893-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-28T01:11:26.899-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
