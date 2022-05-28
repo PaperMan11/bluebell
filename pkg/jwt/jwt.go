@@ -24,6 +24,7 @@ type MyClaims struct {
 	jwt.StandardClaims
 }
 
+// access Token (了解一下 refresh token)
 // GenToken 生成JWT
 func GenToken(userID int64, username string) (string, error) {
 	// 创建我们自己声明的数据
