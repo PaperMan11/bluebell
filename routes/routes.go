@@ -4,7 +4,6 @@ import (
 	"bluebell/controller"
 	"bluebell/logger"
 	"bluebell/middlewares"
-	"bluebell/settings"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -16,12 +15,17 @@ func Setup(mode string) *gin.Engine {
 	}
 	r := gin.New()
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
+	v1 := r.Group("/api/v1")
 	// 注册业务路由
-	r.POST("/signup", controller.SignUpHandler)
-	r.POST("/login", controller.LoginHandler)
-	r.GET("/ping", middlewares.JWTAuthMiddleware(), func(ctx *gin.Context) {
-		ctx.String(http.StatusOK, settings.Conf.Version)
-	})
+	v1.POST("/signup", controller.SignUpHandler)
+	// 登录
+	v1.POST("/login", controller.LoginHandler)
+	// jwt中间件
+	v1.Use(middlewares.JWTAuthMiddleware())
+	{
+		v1.GET("/community", controller.CommunityHandler)
+		v1.GET("/community/:id", controller.CommunityDetailHandler)
+	}
 	r.NoRoute(func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H{
 			"msg": "404",
