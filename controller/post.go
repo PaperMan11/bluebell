@@ -9,6 +9,7 @@ import (
 	"go.uber.org/zap"
 )
 
+// CreatePostHandler 创建帖子
 func CreatePostHandler(ctx *gin.Context) {
 	// 获取参数及参数校验
 	p := new(models.Post)
@@ -48,6 +49,21 @@ func GetPostDetailHandler(ctx *gin.Context) {
 	data, err := logic.GetPostByID(pid)
 	if err != nil {
 		zap.L().Error("logic.GetPostByID(pid) failed", zap.Error(err))
+		ResponseError(ctx, CodeServerBusy)
+		return
+	}
+	// 返回响应
+	ResponseSuccess(ctx, data)
+}
+
+// GetPostListHandler 获取帖子列表的处理函数
+func GetPostListHandler(ctx *gin.Context) {
+	// 获取分页参数
+	offset, limit := getPageInfo(ctx)
+	// 获取数据
+	data, err := logic.GetPostList(offset, limit)
+	if err != nil {
+		zap.L().Error("logic.GetPostList() failed", zap.Error(err))
 		ResponseError(ctx, CodeServerBusy)
 		return
 	}
