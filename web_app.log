@@ -140,3 +140,7 @@
 {"level":"INFO","time":"2022-05-30T20:08:53.897-0700","caller":"logger/logger.go:83","msg":"/api/v1/postlist","status":200,"method":"GET","path":"/api/v1/postlist","query":"offset=3&limit=1","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.012821065}
 {"level":"INFO","time":"2022-05-30T20:09:06.356-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2022-05-30T20:09:06.373-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
+{"level":"INFO","time":"2022-05-30T20:53:16.455-0700","caller":"logger/logger.go:83","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.019497564}
+{"level":"INFO","time":"2022-05-30T20:53:59.603-0700","caller":"logger/logger.go:83","msg":"/api/v1/postlist","status":200,"method":"GET","path":"/api/v1/postlist","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.29.0","errors":"","cost":0.014204801}
+{"level":"INFO","time":"2022-05-30T20:54:13.561-0700","caller":"bluebell/main.go:76","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2022-05-30T20:54:13.572-0700","caller":"bluebell/main.go:84","msg":"Server exiting"}
