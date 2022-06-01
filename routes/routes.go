@@ -5,6 +5,7 @@ import (
 	"bluebell/logger"
 	"bluebell/middlewares"
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -14,8 +15,8 @@ func Setup(mode string) *gin.Engine {
 		gin.SetMode(gin.ReleaseMode) // gin 设置成发布模式
 	}
 	r := gin.New()
-	r.Use(logger.GinLogger(), logger.GinRecovery(true))
 	v1 := r.Group("/api/v1")
+	r.Use(logger.GinLogger(), logger.GinRecovery(true), middlewares.RateLimitMiddleware(2*time.Second, 1))
 	// 注册
 	v1.POST("/signup", controller.SignUpHandler)
 	// 登录
