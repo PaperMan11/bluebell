@@ -38,7 +38,7 @@ func GetPostList(offset int64, limit int64) (posts []*models.Post, err error) {
 	return
 }
 
-// GetPostListByIDs 根据给定的id列表查询帖子数据
+// GetPostListByIDs 根据给定的id列表查询帖子数据（结果顺寻为给定的顺序）
 func GetPostListByIDs(ids []string) (postList []*models.Post, err error) {
 	sqlStr := `select post_id, title, content, author_id, community_id, create_time
 	from post
