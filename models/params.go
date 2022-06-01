@@ -1,5 +1,10 @@
 package models
 
+const (
+	OrderTime  = "time"
+	OrderScore = "score"
+)
+
 // 请求参数
 // binding:"required" 请求参数不能为空
 // binding:"required,eqfield=PassWord" 请求参数不能为空且字段必须等于 PassWord
@@ -23,4 +28,11 @@ type ParamVoteData struct {
 	// 赞成票（1）反对票（-1）取消投票（0）
 	// binding:"required,oneof=1 -1 0" 参数不能为空且值为其中一个
 	Direction int8 `json:"direction,string" binding:"oneof=1 0 -1"`
+}
+
+// 获取帖子列表参数 query string 参数
+type ParamPostList struct {
+	Offset int64  `json:"offset" form:"offset"`
+	Limit  int64  `json:"limit" form:"limit"`
+	Order  string `json:"order" form:"order"`
 }
