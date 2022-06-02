@@ -11,15 +11,15 @@ log:
   max_age: 30
   max_backups: 7
 mysql:
-  host: "127.0.0.1"
+  host: mysql8019
   port: 3306
-  user: "tzq"
+  user: "root"
   password: "123456"
   dbname: "db1"
   max_open_conns: 200
   max_idle_conns: 50
 redis:
-  host: "127.0.0.1"
+  host: some-redis
   port: 6379
   password: ""
   db: 0
